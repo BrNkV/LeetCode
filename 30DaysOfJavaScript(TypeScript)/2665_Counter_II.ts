@@ -33,19 +33,19 @@ counter.reset(); // 0
  */
 
 type Counter = {
-    increment: () => number,
-    decrement: () => number,
-    reset: () => number,
-}
+  increment: () => number;
+  decrement: () => number;
+  reset: () => number;
+};
 
 function createCounter(init: number): Counter {
-    let counter = init;
-    return {
-        increment: ():number  => ++counter,
-        decrement: ():number  => --counter,
-        reset: ():number  => counter = init,
-    }
-};
+  let counter = init;
+  return {
+    increment: (): number => ++counter,
+    decrement: (): number => --counter,
+    reset: (): number => (counter = init),
+  };
+}
 
 // function createCounter(init: number): Counter {
 //     let counter:number = structuredClone(init);
@@ -55,7 +55,7 @@ function createCounter(init: number): Counter {
 
 // };
 
-console.log()
+console.log();
 
 /**
  * const counter = createCounter(5)
