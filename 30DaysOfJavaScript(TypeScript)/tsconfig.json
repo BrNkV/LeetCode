@@ -1,0 +1,19 @@
+{ // запуск компиляции в ком строке "tsc" и "tsc -watch"
+  // раздел опции компилятора
+  "compilerOptions": {
+    // стандарт в котор работаем
+    "target": "ES2022",
+    // не удалять комментарии
+    "removeComments": false,
+    // выгрузка JS файла
+    "outDir": "javascript",
+    // файл map для просмотра в браузере
+    "sourceMap": true,
+    // не собирать файл при наличии ошибок
+    "noEmitOnError": true,
+    // использование строгий режим
+    "alwaysStrict": true,
+    // предупреждения при обнаружении неиспользуемого кода
+    "allowUnreachableCode": false
+  }
+}
