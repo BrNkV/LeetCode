@@ -30,3 +30,25 @@ calls is a valid JSON array
 1 <= calls.length <= 10
 1 <= calls[i].length <= 100
 2 <= JSON.stringify(calls).length <= 1000*/
+
+type JSONValue = null | boolean | number | string | JSONValue[] | { [key: string]: JSONValue };
+type OnceFn = (...args: JSONValue[]) => JSONValue | undefined
+
+function once(fn: Function): OnceFn {
+  let called = 0;
+  return function(...args) {
+    if (called > 0) {
+      return undefined
+    }
+    called++
+    return fn(...args)
+  };
+}
+
+/**
+ * let fn = (a,b,c) => (a + b + c)
+ * let onceFn = once(fn)
+ *
+ * onceFn(1,2,3); // 6
+ * onceFn(2,3,6); // returns undefined without calling fn
+ */
